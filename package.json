@@ -1,65 +1,12 @@
 {
-  "_from": "mozaik@1.4.4",
-  "_id": "mozaik@1.4.4",
-  "_inBundle": false,
-  "_integrity": "sha1-oBfY/hDHxU4x1Z5r3xC/AxtdTMg=",
-  "_location": "/mozaik",
-  "_phantomChildren": {
-    "array-differ": "1.0.0",
-    "array-uniq": "1.0.3",
-    "beeper": "1.1.1",
-    "chalk": "1.1.3",
-    "fancy-log": "1.3.3",
-    "get-stdin": "4.0.1",
-    "gulplog": "1.0.0",
-    "has-gulplog": "0.1.0",
-    "inflight": "1.0.6",
-    "inherits": "2.0.4",
-    "lodash._reescape": "3.0.0",
-    "lodash._reevaluate": "3.0.0",
-    "lodash._reinterpolate": "3.0.0",
-    "lodash.template": "3.6.2",
-    "meow": "3.7.0",
-    "minimatch": "3.0.4",
-    "minimist": "1.2.5",
-    "multipipe": "0.1.2",
-    "object-assign": "3.0.0",
-    "once": "1.3.3",
-    "path-is-absolute": "1.0.1",
-    "replace-ext": "0.0.1",
-    "through2": "2.0.5",
-    "vinyl": "0.5.3"
-  },
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "mozaik@1.4.4",
-    "name": "mozaik",
-    "escapedName": "mozaik",
-    "rawSpec": "1.4.4",
-    "saveSpec": null,
-    "fetchSpec": "1.4.4"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/mozaik/-/mozaik-1.4.4.tgz",
-  "_shasum": "a017d8fe10c7c54e31d59e6bdf10bf031b5d4cc8",
-  "_spec": "mozaik@1.4.4",
-  "_where": "C:\\Users\\colin.regourd\\Documents\\learn\\React\\Mozaïk\\mozaik-demo",
-  "author": {
-    "name": "Raphaël Benitte",
-    "url": "https://github.com/plouc"
-  },
+  "main": "src/Mozaik.js",
+  "name": "mozaik",
+  "version": "1.4.4",
   "browserify": {
     "transform": [
       "babelify"
     ]
   },
-  "bugs": {
-    "url": "https://github.com/plouc/mozaik/issues"
-  },
-  "bundleDependencies": false,
   "dependencies": {
     "babelify": "^7.3.0",
     "bluebird": "3.3.5",
@@ -94,8 +41,6 @@
     "winston": "2.2.0",
     "ws": "1.1.0"
   },
-  "deprecated": false,
-  "description": "Mozaik dashboard composition tool",
   "devDependencies": {
     "babel-eslint": "6.0.2",
     "babel-preset-es2015": "6.6.0",
@@ -110,52 +55,16 @@
     "react": "^0.13.3",
     "sinon": "1.17.3"
   },
+  "peerDependencies": {
+    "react": "^0.13.3"
+  },
   "engines": {
     "node": "0.12.x",
     "npm": ">=3.0.0"
   },
-  "homepage": "https://github.com/plouc/mozaik",
-  "keywords": [
-    "mozaik",
-    "realtime",
-    "websockets",
-    "components",
-    "widget",
-    "extension",
-    "dashboard",
-    "framework",
-    "dataviz",
-    "d3",
-    "react"
-  ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/plouc/mozaik/blob/master/LICENSE.md"
-    }
-  ],
-  "main": "src/Mozaik.js",
-  "name": "mozaik",
-  "peerDependencies": {
-    "react": "^0.13.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/plouc/mozaik.git"
-  },
+
   "scripts": {
     "eslint": "eslint --ext .js --ext .jsx ./src/*",
     "test": "mocha --opts mocha.opts"
-  },
-  "version": "1.4.4",
-  "warnings": [
-    {
-      "code": "ENOTSUP",
-      "required": {
-        "node": "0.12.x",
-        "npm": ">=3.0.0"
-      },
-      "pkgid": "mozaik@1.4.4"
-    }
-  ]
+  }
 }
