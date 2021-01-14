@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import reactMixin                      from 'react-mixin';
-import { ListenerMixin }               from 'reflux';
+import { ListenerMixin }               from 'reflux-react-16';
 import ConnectionStatusStore, {
     CONNECTION_STATUS_CONNECTING,
     CONNECTION_STATUS_CONNECTED,

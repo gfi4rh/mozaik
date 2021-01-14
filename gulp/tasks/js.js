@@ -15,7 +15,7 @@ var config      = require('../config');
 
 function getBundler(isDev) {
     var opts = _.assign({}, watchify.args, {
-        entries:    [config.src + 'App.jsx'],
+        entries:    [`${config.src}App.jsx`],
         extensions: ['.js', '.jsx'],
         debug:      isDev,
         fullPaths:  isDev
@@ -67,7 +67,7 @@ function getWatcher(isDev) {
         .on('update', function (files) {
             gutil.log(chalk.yellow('Updated JavaScript sources, changes in:'));
             files.forEach(function (file) {
-                gutil.log('- ' + file);
+                gutil.log(`- ${file}`);
             });
 
             return bundle(watcher, isDev);

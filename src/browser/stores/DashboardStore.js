@@ -1,4 +1,4 @@
-import Reflux           from 'reflux';
+import Reflux           from 'reflux-react-16';
 import _                from 'lodash';
 import DashboardActions from './../actions/DashboardActions';
 import ConfigStore      from './ConfigStore';

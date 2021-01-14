@@ -2,6 +2,11 @@
   "main": "src/Mozaik.js",
   "name": "mozaik",
   "version": "1.4.4",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colin27091/mozaik.git"
+  },
   "browserify": {
     "transform": [
       "babelify"
@@ -31,7 +36,7 @@
     "memory-cache": "0.1.5",
     "prop-types": "^15.7.2",
     "react-mixin": "3.0.4",
-    "reflux": "0.4.1",
+    "reflux-react-16-react-16": "^1.0.2",
     "request": "2.71.0",
     "superagent": "1.8.3",
     "superagent-bluebird-promise": "3.0.0",
@@ -52,11 +57,11 @@
     "expect": "1.16.0",
     "mocha": "2.4.5",
     "mockery": "1.5.1",
-    "react": "^17.0.1",
+    "react": "^16.2.0",
     "sinon": "1.17.3"
   },
   "peerDependencies": {
-    "react": "^17.0.1"
+    "react": "^16.2.0"
   },
   "engines": {
     "node": "0.12.x",

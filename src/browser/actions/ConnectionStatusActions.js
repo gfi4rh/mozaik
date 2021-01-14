@@ -1,4 +1,4 @@
-import Reflux from 'reflux';
+import Reflux from 'reflux-react-16';
 
 
 const ConnectionStatusActions = Reflux.createActions([

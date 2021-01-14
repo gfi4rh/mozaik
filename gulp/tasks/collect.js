@@ -13,7 +13,7 @@ var chalk  = require('chalk');
 gulp.task('collect:styles', function (done) {
     gutil.log(chalk.green('Collecting extensions styles'));
 
-    var files = glob.sync(config.root + 'node_modules/mozaik-ext-*/styl/index.styl');
+    var files = glob.sync(`${config.root}node_modules/mozaik-ext-*/styl/index.styl`);
 
     var lines = [
         '/**',
@@ -22,10 +22,10 @@ gulp.task('collect:styles', function (done) {
     ];
 
     files.forEach(function (file) {
-        lines.push('@require "' + path.relative(config.mozaikSrc + 'ext', file) + '";');
+        lines.push(`@require "${path.relative(`${config.mozaikSrc}ext`, file)}";`);
     });
 
-    fs.writeFile(config.mozaikSrc + 'ext/collected.styl', lines.join('\n'), function (err) {
+    fs.writeFile(`${config.mozaikSrc}ext/collected.styl`, lines.join('\n'), function (err) {
         if (err) {
             throw err;
         }

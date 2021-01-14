@@ -38,14 +38,14 @@ gulp.task('styles:dev', ['collect:styles'], function () {
         gutil.log(chalk.green('Compiling stylus code using theme \'' + theme + '\''));
 
         resolve(gulp
-            .src(config.mozaikSrc + 'styl/mozaik.styl')
+            .src(`${config.mozaikSrc}styl/mozaik.styl`)
             .pipe(stylus({
                 'include css': true,
-                use: function (style) {
+                use: (style) => {
                     style.define('$theme', theme);
                 }
             }))
-            .pipe(gulp.dest(config.dest + 'css'))
+            .pipe(gulp.dest(`${config.dest}css`))
         );
     });
 });

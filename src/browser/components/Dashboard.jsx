@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import reactMixin                      from 'react-mixin';
 import classNames                      from 'classnames';
 import _                               from 'lodash';
-import { ListenerMixin }               from 'reflux';
+import { ListenerMixin }               from 'reflux-react-16';
 import Widget                          from './Widget.jsx';
 import DashboardStore                  from './../stores/DashboardStore';
 

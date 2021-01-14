@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import reactMixin                      from 'react-mixin';
-import { ListenerMixin }               from 'reflux';
+import { ListenerMixin }               from 'reflux-react-16';
 import _                               from 'lodash';
 import ComponentRegistry               from './../component-registry';
 import ApiConsumerMixin                from './../mixins/ApiConsumerMixin';
