@@ -36,7 +36,7 @@
     "memory-cache": "0.1.5",
     "prop-types": "^15.7.2",
     "react-mixin": "3.0.4",
-    "reflux-react-16-react-16": "^1.0.2",
+    "reflux-react-16": "^1.0.2",
     "request": "2.71.0",
     "superagent": "1.8.3",
     "superagent-bluebird-promise": "3.0.0",
