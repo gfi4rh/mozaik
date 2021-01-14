@@ -29,6 +29,7 @@
     "gulp-util": "3.0.7",
     "lodash": "4.10.0",
     "memory-cache": "0.1.5",
+    "prop-types": "^15.7.2",
     "react-mixin": "3.0.4",
     "reflux": "0.4.1",
     "request": "2.71.0",

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import PieLegends                      from './PieLegends.jsx';
 import PieCount                        from './PieCount.jsx';
 import PieChart                        from './PieChart.jsx';
