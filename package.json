@@ -1,7 +1,7 @@
 {
   "main": "src/Mozaik.js",
   "name": "mozaik",
-  "version": "1.4.4",
+  "version": "2.0.0",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
@@ -56,11 +56,11 @@
     "expect": "1.16.0",
     "mocha": "2.4.5",
     "mockery": "1.5.1",
-    "react": "^16.2.0",
+    "react": "^17.0.1",
     "sinon": "1.17.3"
   },
   "peerDependencies": {
-    "react": "^16.2.0"
+    "react": "^17.0.1"
   },
   "engines": {
     "node": "0.12.x",
