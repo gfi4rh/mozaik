@@ -75,7 +75,7 @@ function getWatcher(isDev) {
     ;
 }
 
-gulp.task('watch:js', function () {
+gulp.series('watch:js', function () {
     return bundle(getWatcher(true), true)
         .on('end', function () {
             gutil.log(chalk.yellow('watch:js watcher ready'));
@@ -84,7 +84,7 @@ gulp.task('watch:js', function () {
 });
 
 
-gulp.task('js:dev', function () {
+gulp.series('js:dev', function () {
     return getBundler(true)
         .bundle()
         .pipe(source('mozaik.js'))
@@ -93,7 +93,7 @@ gulp.task('js:dev', function () {
 });
 
 
-gulp.task('js', function () {
+gulp.series('js', function () {
     process.env.NODE_ENV = 'production';
 
     return getBundler(false)

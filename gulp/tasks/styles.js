@@ -8,10 +8,10 @@ var config  = require('../config');
 var Promise = require('bluebird');
 
 
-gulp.task('styles', ['styles:dev']);
+gulp.task('styles', gulp.parallel('styles:dev'));
 
 
-gulp.task('styles:dev', ['collect:styles'], function () {
+gulp.series('styles:dev', gulp.parallel('collect:styles'), function () {
     return new Promise(function (resolve, reject) {
         // invalidate config require cache to force reload
         var mod = require.resolve(path.join(config.root, 'config.js'));

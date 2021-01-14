@@ -12,7 +12,7 @@ var fontsPaths = [
     config.mozaikSrc + 'themes/*/assets/fonts/*'
 ];
 
-gulp.task('copy:fonts', function () {
+gulp.series('copy:fonts', function () {
     gutil.log(chalk.green('Copying fonts'));
 
     return gulp.src(fontsPaths)
@@ -21,7 +21,7 @@ gulp.task('copy:fonts', function () {
     ;
 });
 
-gulp.task('copy:imgs', function () {
+gulp.series('copy:imgs', function () {
     gutil.log(chalk.green('Copying images from extensions and themes'));
 
     return gulp.src([
@@ -34,7 +34,7 @@ gulp.task('copy:imgs', function () {
     ;
 });
 
-gulp.task('copy:styles', function () {
+gulp.series('copy:styles', function () {
     gutil.log(chalk.green('Copying styles'));
 
     return gulp.src([
@@ -46,4 +46,4 @@ gulp.task('copy:styles', function () {
     ;
 });
 
-gulp.task('copy', ['copy:fonts', 'copy:styles', 'copy:imgs']);
+gulp.task('copy', gulp.parallel('copy:fonts', 'copy:styles', 'copy:imgs'));
