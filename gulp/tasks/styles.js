@@ -11,7 +11,7 @@ var Promise = require('bluebird');
 gulp.task('styles', gulp.parallel('styles:dev'));
 
 
-gulp.series('styles:dev', gulp.parallel('collect:styles'), function () {
+gulp.task('styles:dev', gulp.series('collect:styles'), () => {
     return new Promise(function (resolve, reject) {
         // invalidate config require cache to force reload
         var mod = require.resolve(path.join(config.root, 'config.js'));

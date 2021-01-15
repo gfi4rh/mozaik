@@ -1,3 +1,3 @@
 var gulp = require('gulp');
 
-gulp.task('default', gulp.parallel('build'));
+gulp.task('default', gulp.series('build'));

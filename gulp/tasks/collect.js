@@ -10,7 +10,7 @@ var chalk  = require('chalk');
 /**
  * Collect extensions styles looking in modules with name matching mozaik-ext-*
  */
-gulp.task('collect:styles', function (done) {
+gulp.task('collect:styles', (done) => {
     gutil.log(chalk.green('Collecting extensions styles'));
 
     var files = glob.sync(`${config.root}node_modules/mozaik-ext-*/styl/index.styl`);

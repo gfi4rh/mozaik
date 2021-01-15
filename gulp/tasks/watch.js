@@ -3,7 +3,7 @@ var path   = require('path');
 var config = require('../config');
 
 
-gulp.series('watch:styles', function () {
+gulp.task('watch:styles',() => {
     return gulp.watch([
         config.root      + path.join('config.js'),                                      // config for `theme` property
         config.mozaikSrc + path.join('styl', '**', '*'),                                // mozaïk base styles
