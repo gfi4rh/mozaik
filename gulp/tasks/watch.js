@@ -10,7 +10,7 @@ gulp.task('watch:styles',() => {
         config.mozaikSrc + path.join('themes', '**', '*'),                              // mozaïk themes
         config.root      + path.join('themes', '**', '*'),                              // custom themes
         config.root      + path.join('node_modules', 'mozaik-ext-*', 'styl', '**', '*') // extensions styles
-    ], ['styles:dev']);
+    ], gulp.series('styles:dev'));
 });
 
 
