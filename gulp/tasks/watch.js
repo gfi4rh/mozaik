@@ -14,4 +14,4 @@ gulp.task('watch:styles',() => {
 });
 
 
-gulp.task('watch', gulp.parallel('watch:styles', 'watch:js'));
+gulp.task('watch', gulp.series('watch:styles', 'watch:js'));

@@ -8,7 +8,7 @@ var config  = require('../config');
 var Promise = require('bluebird');
 
 
-gulp.task('styles', gulp.parallel('styles:dev'));
+gulp.task('styles', gulp.series('styles:dev'));
 
 
 gulp.task('styles:dev', gulp.series('collect:styles'), () => {
