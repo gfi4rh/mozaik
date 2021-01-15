@@ -7,9 +7,7 @@ var chalk   = require('chalk');
 var config  = require('../config');
 var Promise = require('bluebird');
 
-
-gulp.task('styles', gulp.series('styles:dev'));
-
+require('./collect')
 
 gulp.task('styles:dev', gulp.series('collect:styles'), () => {
     return new Promise(function (resolve, reject) {
@@ -49,3 +47,5 @@ gulp.task('styles:dev', gulp.series('collect:styles'), () => {
         );
     });
 });
+
+gulp.task('styles', gulp.series('styles:dev'));
