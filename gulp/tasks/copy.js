@@ -47,3 +47,5 @@ gulp.task('copy:styles', function () {
 });
 
 gulp.task('copy', gulp.series('copy:fonts', 'copy:styles', 'copy:imgs'));
+
+exports.copy = gulp.series('copy:fonts', 'copy:styles', 'copy:imgs');
