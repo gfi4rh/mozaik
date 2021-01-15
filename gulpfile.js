@@ -1,5 +1,5 @@
 var gulp = require('gulp');
 
-require(require('path').resolve(__dirname + '/gulp'));
-
+var stock = require(require('path').resolve(__dirname + '/gulp'));
+console.log(stock)
 module.exports = gulp;
