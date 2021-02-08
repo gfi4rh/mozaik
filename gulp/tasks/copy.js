@@ -40,7 +40,7 @@ gulp.task('copy:styles', function () {
     gutil.log(chalk.cyan('MozaikRoot : ' +config.mozaikRoot));
 
     return gulp.src([
-            //config.mozaikRoot + 'node_modules/font-awesome/css/font-awesome.min.css',
+            config.mozaikRoot + 'src/font/mozaik.css',
             config.root + 'node_modules/font-awesome/css/font-awesome.min.css'
         ])
         .pipe(flatten())
