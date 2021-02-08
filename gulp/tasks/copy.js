@@ -36,6 +36,8 @@ gulp.task('copy:imgs', function () {
 
 gulp.task('copy:styles', function () {
     gutil.log(chalk.green('Copying styles'));
+    gutil.log(chalk.cyan('Root : ' + config.root));
+    gutil.log(chalk.cyan('MozaikRoot : ' +config.mozaikRoot));
 
     return gulp.src([
             //config.mozaikRoot + 'node_modules/font-awesome/css/font-awesome.min.css',
