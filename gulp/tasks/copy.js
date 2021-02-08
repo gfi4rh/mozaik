@@ -48,4 +48,4 @@ gulp.task('copy:styles', function () {
     ;
 });
 
-gulp.task('copy', gulp.parallel('copy:fonts', 'copy:styles', 'copy:imgs'));
+gulp.task('copy', gulp.series('copy:fonts', 'copy:styles', 'copy:imgs'));
