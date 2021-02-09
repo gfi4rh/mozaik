@@ -9,13 +9,14 @@ var Promise = require('bluebird');
 
 require('./collect')
 
-gulp.task('styles:dev', gulp.series('collect:styles'), () => {
+gulp.task('styles:dev', () => {
     return new Promise(function (resolve, reject) {
         // invalidate config require cache to force reload
         var mod = require.resolve(path.join(config.root, 'config.js'));
         if (mod && ((mod = require.cache[mod]) !== undefined)) {
             delete require.cache[mod.id];
         }
+
 
         var appConfig = require(path.join(config.root, 'config.js'));
         var theme     = appConfig.theme;
@@ -29,9 +30,11 @@ gulp.task('styles:dev', gulp.series('collect:styles'), () => {
             theme = mozaikThemePath;
         }
 
+
         if (fs.existsSync(path.join(theme, '_vars.styl')) === false || fs.existsSync(path.join(theme, 'index.styl')) == false) {
             return done(new Error(chalk.red('Please make sure your theme contains both \'_vars.styl\' and \'index.styl\' files (path: ' + theme + ')')));
         }
+
 
         gutil.log(chalk.green('Compiling stylus code using theme \'' + theme + '\''));
 
@@ -48,4 +51,4 @@ gulp.task('styles:dev', gulp.series('collect:styles'), () => {
     });
 });
 
-gulp.task('styles', gulp.series('styles:dev'));
+gulp.task('styles', gulp.series('styles:dev', 'collect:styles'));

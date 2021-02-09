@@ -9,7 +9,18 @@ import CoreApi from './CoreApi';
 
 class Mozaik {
     constructor(config) {
-        this.logger = winston;
+
+        const logger = winston.createLogger({
+            format: winston.format.combine(
+                winston.format.colorize(),
+                winston.format.simple()
+            ),
+            transports: [
+                new winston.transports.Console()
+            ]
+        })
+
+        this.logger = logger;
 
         this.config = config;
 

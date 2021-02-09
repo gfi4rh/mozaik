@@ -12,7 +12,7 @@ export default function (mozaik, app) {
 
     const config = mozaik.serverConfig;
 
-    mozaik.logger.info(chalk.yellow(`serving static contents from ${mozaik.baseDir}build`));
+    mozaik.logger.log('info', chalk.yellow(`serving static contents from ${mozaik.baseDir}build`));
     app.use(express.static(`${mozaik.baseDir}/build`));
 
     app.engine('html', swig.renderFile);
