@@ -6,32 +6,22 @@
     ]
   ],
   "_from": "git+https://github.com/colin27091/mozaik.git",
-  "_id": "mozaik@git+https://github.com/colin27091/mozaik.git#cbcc62012a43b75650d931b1eba98337f6903150",
+  "_id": "mozaik@2.0.0",
   "_inBundle": false,
   "_integrity": "",
   "_location": "/mozaik",
   "_phantomChildren": {
-    "@dabh/diagnostics": "2.0.2",
     "inflight": "1.0.6",
     "inherits": "2.0.4",
-    "is-stream": "2.0.0",
-    "logform": "2.2.0",
     "minimatch": "3.0.4",
     "once": "1.4.0",
-    "one-time": "1.0.0",
-    "path-is-absolute": "1.0.1",
-    "readable-stream": "2.3.7",
-    "safe-buffer": "5.1.2",
-    "stack-trace": "0.0.10",
-    "string_decoder": "1.1.1",
-    "through2": "2.0.5",
-    "triple-beam": "1.3.0",
-    "util-deprecate": "1.0.2",
-    "vinyl": "2.2.1"
+    "path-is-absolute": "1.0.1"
   },
   "_requested": {
     "type": "git",
-    "raw": "git+https://github.com/colin27091/mozaik.git",
+    "raw": "mozaik@git+https://github.com/colin27091/mozaik.git",
+    "name": "mozaik",
+    "escapedName": "mozaik",
     "rawSpec": "git+https://github.com/colin27091/mozaik.git",
     "saveSpec": "git+https://github.com/colin27091/mozaik.git",
     "fetchSpec": "https://github.com/colin27091/mozaik.git",
@@ -40,8 +30,8 @@
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "git+https://github.com/colin27091/mozaik.git#cbcc62012a43b75650d931b1eba98337f6903150",
-  "_spec": "git+https://github.com/colin27091/mozaik.git",
+  "_resolved": "git+https://github.com/colin27091/mozaik.git#131daee48a2949260c92323fb4867d72b5177c34",
+  "_spec": "mozaik@git+https://github.com/colin27091/mozaik.git",
   "_where": "C:\\Users\\colin.regourd\\Documents\\learn\\React\\Mozaïk\\mozaik-test-kernel",
   "browserify": {
     "transform": [
@@ -51,6 +41,7 @@
   "bugs": {
     "url": "https://github.com/colin27091/mozaik/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "babelify": "^7.3.0",
     "bluebird": "3.3.5",
@@ -86,6 +77,7 @@
     "winston": "3.3.3",
     "ws": "1.1.0"
   },
+  "deprecated": false,
   "description": "![MOZAÏK][logo]",
   "devDependencies": {
     "babel-eslint": "6.0.2",
