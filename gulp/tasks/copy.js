@@ -26,7 +26,7 @@ gulp.task('copy:imgs', function () {
 
     return gulp.src([
             config.root + 'node_modules/mozaik-ext-*/assets/imgs/*',
-            config.root + 'themes/*/assets/imgs/*',
+            config.root + 'assets/imgs/*',
             config.mozaikSrc + 'themes/*/assets/imgs/*'
         ])
         .pipe(flatten())
