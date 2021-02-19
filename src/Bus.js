@@ -82,10 +82,10 @@ const Bus = mozaik => {
         clients[id] = client;
         mozaik.logger.info(`Client #${id} connected`);
 
-        apis.forEach = (api) => {
+        _.forEach(apis, (api)=> {
             mozaik.logger.info(api);
             clientSubscription(id, api);
-        }
+        });
 
     };
 
