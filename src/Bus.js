@@ -59,8 +59,10 @@ const Bus = mozaik => {
             throw new Error(errMsg);
         }
 
+        
         apis[id] = { methods: api(mozaik), mode };
 
+        mozaik.logger.info(JSON.stringify(apis) + ' ' +id);
         mozaik.logger.info(chalk.yellow(`registered API '${id}' (mode: ${mode})`));
     };
 
@@ -78,14 +80,9 @@ const Bus = mozaik => {
             throw new Error(errMsg);
         }
 
-
         clients[id] = client;
         mozaik.logger.info(`Client #${id} connected`);
 
-        _.forEach(apis, (api)=> {
-            mozaik.logger.info(api);
-            clientSubscription(id, api);
-        });
 
     };
 
