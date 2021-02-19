@@ -17,7 +17,7 @@ const ApiConsumerMixin = {
             return;
         }
 
-        this.listenTo(ApiStore, this.onAllApiData);
+        //this.listenTo(ApiStore, this.onAllApiData);
     },
 
     onAllApiData(data) {
