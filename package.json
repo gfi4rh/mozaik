@@ -75,7 +75,7 @@
     "vinyl-source-stream": "2.0.0",
     "watchify": "3.7.0",
     "winston": "3.3.3",
-    "ws": "1.1.0"
+    "ws": "7.4.3"
   },
   "deprecated": false,
   "description": "![MOZAÏK][logo]",
