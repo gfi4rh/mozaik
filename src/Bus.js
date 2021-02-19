@@ -79,7 +79,6 @@ const Bus = mozaik => {
         }
 
         clients[id] = client;
-
         mozaik.logger.info(`Client #${id} connected`);
     };
 
