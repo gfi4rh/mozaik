@@ -50,6 +50,7 @@ export default function (mozaik, app) {
         mozaik.bus.addClient(ws, clientId);
 
         ws.on('message', (request) => {
+            mozaik.logger.info(`Requete : ${JSON.parse(request)}`);
             mozaik.bus.clientSubscription(clientId, JSON.parse(request));
         });
 
