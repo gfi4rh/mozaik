@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import reactMixin                      from 'react-mixin';
-import { ListenerMixin }               from 'reflux-react-16';
+import { ListenerMixin }               from 'reflux';
 import Dashboard                       from './Dashboard.jsx';
 import Notifications                   from './Notifications.jsx';
 import ConfigStore                     from '../stores/ConfigStore';
