@@ -6,7 +6,7 @@
 [![Quality][codeclimate-image]][codeclimate-url]
 [![Dependencies][gemnasium-image]][gemnasium-url]
 
-Mozaïk is a tool based on nodejs / react / reflux-react-16 / d3 / stylus to easily craft beautiful dashboards. [See demo](http://mozaik.herokuapp.com/)
+Mozaïk is a tool based on nodejs / react / reflux / d3 / stylus to easily craft beautiful dashboards. [See demo](http://mozaik.herokuapp.com/)
 
 ![preview](https://raw.githubusercontent.com/juhamust/mozaik/readme/preview.png)
 

@@ -1,4 +1,4 @@
-import Reflux from 'reflux-react-16';
+import Reflux from 'reflux';
 
 
 const ApiActions = Reflux.createActions([
