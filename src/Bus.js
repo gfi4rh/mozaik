@@ -98,7 +98,7 @@ const Bus = mozaik => {
             // if there's no more subscribers, clear the interval
             // to avoid consuming APIs for nothing.
             if (subscription.clients.length === 0 && subscription.timer) {
-                mozaik.logger.info(`removing interval for '${subscriptionId}'`);
+                mozaik.logger.info(`Removing interval for '${subscriptionId}'`);
 
                 clearInterval(subscription.timer);
                 delete subscription.timer;
