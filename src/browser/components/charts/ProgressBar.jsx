@@ -1,9 +1,12 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 
 class ProgressBar extends Component {
 
   render() {
+
+    const { completed, color, animation, height } = this.props;
 
     const style = {
       backgroundColor: color,
