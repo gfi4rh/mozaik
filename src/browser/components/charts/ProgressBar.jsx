@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, PropTypes } from 'react';
 
 
 class ProgressBar extends Component {
@@ -18,10 +17,11 @@ class ProgressBar extends Component {
           </div>
       );
   }
-}
+};
 
-/*ProgressBar.propTypes = {
-};*/
+ProgressBar.propTypes = {
+  completed: PropTypes.number.isRequired
+};
 
 ProgressBar.displayName = 'ProgressBar';
 
