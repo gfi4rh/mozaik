@@ -8,6 +8,7 @@ import PieComponent      from './components/charts/Pie.jsx';
 import GaugeComponent    from './components/charts/Gauge.jsx';
 import TreemapComponent  from './components/charts/Treemap.jsx';
 import BarChartComponent from './components/charts/BarChart.jsx';
+import ProgressBarComponent from './components/charts/ProgressBar.jsx'
 import Inspector         from './components/Inspector.jsx';
 
 
@@ -31,6 +32,7 @@ export default {
         Pie:      PieComponent,
         Gauge:    GaugeComponent,
         Treemap:  TreemapComponent,
-        BarChart: BarChartComponent
+        BarChart: BarChartComponent,
+        ProgressBar: ProgressBarComponent
     }
 };
