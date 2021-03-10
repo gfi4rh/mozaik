@@ -61,8 +61,6 @@ const Bus = mozaik => {
 
         
         apis[id] = { methods: api(mozaik), mode };
-
-        mozaik.logger.info(JSON.stringify(apis) + ' ' +id);
         mozaik.logger.info(chalk.yellow(`Registered API '${id}' (mode: ${mode})`));
     };
 

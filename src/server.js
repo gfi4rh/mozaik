@@ -12,7 +12,7 @@ export default function (mozaik, app) {
 
     const config = mozaik.serverConfig;
 
-    mozaik.logger.log('info', chalk.yellow(`serving static contents from ${mozaik.baseDir}build`));
+    mozaik.logger.log('info', chalk.yellow(`Serving static contents from ${mozaik.baseDir}build`));
     app.use(express.static(`${mozaik.baseDir}/build`));
 
     app.engine('html', swig.renderFile);
@@ -50,7 +50,6 @@ export default function (mozaik, app) {
         mozaik.bus.addClient(ws, clientId);
 
         ws.on('message', (request) => {
-            mozaik.logger.info(`Requete : ${JSON.parse(request)}`);
             mozaik.bus.clientSubscription(clientId, JSON.parse(request));
         });
 
