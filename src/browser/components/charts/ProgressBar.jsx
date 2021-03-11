@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 
 class ProgressBar extends Component {
 
+  static defaultProps = {
+    completed: 10,
+    color: '#0BD318',
+    animation: 200,
+    height: 10
+  };
+
   render() {
 
     const { completed, color, animation, height } = this.props;
@@ -23,17 +30,12 @@ class ProgressBar extends Component {
 };
 
 ProgressBar.propTypes = {
-  completed: PropTypes.number.isRequired
+  completed: PropTypes.number,
+  color: PropTypes.string,
+  animation: PropTypes.number,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 ProgressBar.displayName = 'ProgressBar';
-
-ProgressBar.defaultProps = {
-  completed: 0,
-  color: '#0BD318',
-  animation: 200,
-  height: 10
-};
-
 
 export default ProgressBar;
