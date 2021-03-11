@@ -21,8 +21,8 @@ class ProgressBar extends Component {
 
     return (
         <div className="progress-bar_wrapper" style={{height: height}}>
-          <div className="progress-bar_part" style={style_progress}>{completed === null && done}</div>
-          <div className="progress-bar_part" style={style_rest}>{completed === null && open}</div>
+          <div className="progress-bar_part" style={style_progress}>{completed === null || done}</div>
+          <div className="progress-bar_part" style={style_rest}>{completed === null || open}</div>
         </div>
     );
   }
