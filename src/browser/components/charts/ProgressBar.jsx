@@ -4,12 +4,6 @@ import PropTypes from 'prop-types';
 
 class ProgressBar extends Component {
 
-  static defaultProps = {
-    completed: 10,
-    color: '#0BD318',
-    animation: 200,
-    height: 10
-  };
 
   render() {
 
@@ -27,6 +21,13 @@ class ProgressBar extends Component {
           </div>
       );
   }
+};
+
+ProgressBar.defaultProps = {
+  completed: 10,
+  color: '#0BD318',
+  animation: 200,
+  height: 10
 };
 
 ProgressBar.propTypes = {
