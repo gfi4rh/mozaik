@@ -7,34 +7,37 @@ class ProgressBar extends Component {
 
   render() {
 
-    const { completed, color, animation, height } = this.props;
+    /*const { completed, color, animation, height } = this.props;
 
     const style = {
       backgroundColor: color,
       width: completed + '%',
       transition: `width ${animation}ms`,
       height: height,
-    };
+    };*/
 
-      return (
-          <div className="progress-bar_wrapper" style={style}>
-          </div>
-      );
+    // style={style}
+
+    return (
+        <div className="progress-bar_wrapper">
+          Hello
+        </div>
+    );
   }
 };
 
-ProgressBar.defaultProps = {
+/*ProgressBar.defaultProps = {
   completed: 10,
   color: '#0BD318',
   animation: 200,
   height: 10
-};
+};*/
 
 ProgressBar.propTypes = {
-  completed: PropTypes.number,
+  /*completed: PropTypes.number,
   color: PropTypes.string,
   animation: PropTypes.number,
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number])*/
 };
 
 ProgressBar.displayName = 'ProgressBar';
