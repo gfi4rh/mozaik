@@ -4,6 +4,14 @@ import PropTypes from 'prop-types';
 
 class ProgressBar extends Component {
 
+  componentDidMount() {
+
+  }
+
+  shouldComponentUpdate(){
+    
+  }
+
 
   render() {
 
