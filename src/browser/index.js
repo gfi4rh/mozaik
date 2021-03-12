@@ -9,6 +9,7 @@ import GaugeComponent    from './components/charts/Gauge.jsx';
 import TreemapComponent  from './components/charts/Treemap.jsx';
 import BarChartComponent from './components/charts/BarChart.jsx';
 import ProgressBarComponent from './components/charts/ProgressBar.jsx'
+import CamembertComponent from './components/charts/Camembert.jsx'
 import Inspector         from './components/Inspector.jsx';
 
 
@@ -33,6 +34,7 @@ export default {
         Gauge:    GaugeComponent,
         Treemap:  TreemapComponent,
         BarChart: BarChartComponent,
-        ProgressBar: ProgressBarComponent
+        ProgressBar: ProgressBarComponent,
+        Camembert: CamembertComponent
     }
 };
