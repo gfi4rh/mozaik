@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Chart  from 'chart.js';
+import _uniqueId from 'lodash/uniqueId';
 
 
 class Camembert extends Component {
 
-  render() {
+  constructor(props) {
+    super(props);
+    this.id = _uniqueId('chart_'); //prefix chart_ for unique ID
+  }
+
+  componentDidMount() {
     const data = {
       labels: [
         'Red',
@@ -26,20 +33,23 @@ class Camembert extends Component {
       }]
     };
 
-    const {options, legend, type} = this.props;
+    const {options, legend, type } = this.props;
 
-    let node = (
-      <canvas width='2em' height='2em'></canvas>
-    );
+    options.legend = legend;
 
-    let ctx = node.getContext('2d');
-    let chart = new Chart(ctx, {
-      type : 'pie',
-      data : {data}
-    })
+    let ctx = document.getElementById(this.id).getContext('2d');
+
+    this.chartInstance = new Chart(ctx, {
+      type,
+      data,
+      options
+    });
+  }
+
+  render() {
 
     return (
-        {node}
+      <canvas id={this.id} width='0.5em' height='0.5em'></canvas>
     );
   }
 };
@@ -50,8 +60,8 @@ Camembert.defaultProps = {
     position: 'bottom'
   },
   type: 'pie',
-  height: '3em',
-  width: '3em',
+  height: '2em',
+  width: '2em',
   options: {},
 };
 
