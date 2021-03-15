@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Pie } from 'react-chartjs-2'
 
 
 class Camembert extends Component {
 
   render() {
-
     const data = {
       labels: [
         'Red',
@@ -30,10 +28,18 @@ class Camembert extends Component {
 
     const {options, legend, type} = this.props;
 
+    let node = (
+      <canvas width='2em' height='2em'></canvas>
+    );
+
+    let ctx = node.getContext('2d');
+    let chart = new Chart(ctx, {
+      type : 'pie',
+      data : {data}
+    })
+
     return (
-        <div>
-          <Pie data={data}/>
-        </div>
+        {node}
     );
   }
 };
