@@ -29,7 +29,7 @@ class Camembert extends Component {
   render() {
 
     return (
-      <canvas id={this.id} width='0.5em' height='0.5em'></canvas>
+      <canvas id={this.id}></canvas>
     );
   }
 };
@@ -40,8 +40,8 @@ Camembert.defaultProps = {
     position: 'bottom'
   },
   type: 'pie',
-  height: '2em',
-  width: '2em',
+  height: '0.5em',
+  width: '0.5em',
   options: {},
 };
 
