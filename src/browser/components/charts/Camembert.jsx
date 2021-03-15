@@ -4,6 +4,7 @@ import Chart  from 'chart.js';
 import _uniqueId from 'lodash/uniqueId';
 
 
+
 class Camembert extends Component {
 
   constructor(props) {
@@ -31,7 +32,7 @@ class Camembert extends Component {
     const { height, width } = this.props;
 
     return (
-      <canvas id={this.id} height={height} width={width}></canvas>
+      <canvas className="camembert_chart" id={this.id} height={height} width={width}></canvas>
     );
   }
 };
