@@ -24,6 +24,7 @@ class Camembert extends Component {
 
     Chart.defaults.global.defaultFontColor = style.getPropertyValue('color');
     Chart.defaults.global.defaultFontFamily = style.getPropertyValue('font-family')
+    Chart.defaults.global.defaultFontSize = 15
 
     this.chartInstance = new Chart(ctx, {
       type,
@@ -50,7 +51,7 @@ Camembert.defaultProps = {
   type: 'pie',
   height: '1em',
   width: '1em',
-  options: {},
+  options: {}
 };
 
 Camembert.propTypes = {
@@ -61,7 +62,7 @@ Camembert.propTypes = {
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   legend: PropTypes.object,
-  options: PropTypes.object,
+  options: PropTypes.object
 };
 
 Camembert.displayName = 'Camembert';
