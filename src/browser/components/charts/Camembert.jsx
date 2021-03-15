@@ -20,6 +20,11 @@ class Camembert extends Component {
 
     let ctx = document.getElementById(this.id).getContext('2d');
 
+    let style = window.getComputedStyle(document.getElementById(this.id));
+
+    Chart.defaults.global.defaultFontColor = style.getPropertyValue('color');
+    Chart.defaults.global.defaultFontFamily = style.getPropertyValue('font-family')
+
     this.chartInstance = new Chart(ctx, {
       type,
       data,
@@ -32,7 +37,7 @@ class Camembert extends Component {
     const { height, width } = this.props;
 
     return (
-      <canvas className="camembert_chart" id={this.id} height={height} width={width}></canvas>
+      <canvas id={this.id} height={height} width={width}></canvas>
     );
   }
 };
