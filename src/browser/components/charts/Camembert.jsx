@@ -24,7 +24,7 @@ class Camembert extends Component {
 
     Chart.defaults.global.defaultFontColor = style.getPropertyValue('color');
     Chart.defaults.global.defaultFontFamily = style.getPropertyValue('font-family')
-    Chart.defaults.global.defaultFontSize = '2vmin'
+    Chart.defaults.global.defaultFontSize = '15'
 
     this.chartInstance = new Chart(ctx, {
       type,
