@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import Chart  from 'chart.js';
 import _uniqueId from 'lodash/uniqueId';
 
-
-
-class Chart extends Component {
+class Graphic extends Component {
 
   constructor(props) {
     super(props);
@@ -41,14 +39,14 @@ class Chart extends Component {
   }
 };
 
-Chart.defaultProps = {
+Graphic.defaultProps = {
   type: 'pie',
   height: '1em',
   width: '1em',
   options: {}
 };
 
-Chart.propTypes = {
+Graphic.propTypes = {
   data: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.func
@@ -58,6 +56,6 @@ Chart.propTypes = {
   options: PropTypes.object
 };
 
-Chart.displayName = 'Chart';
+Graphic.displayName = 'Graphic';
 
-export default Chart;
+export default Graphic;
