@@ -281,7 +281,7 @@ const Bus = mozaik => {
         listSubscriptions,
         listApis,
         clientCount,
-        changeInterval
+        changeInterval,
     };
 };
 
