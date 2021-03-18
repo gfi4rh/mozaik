@@ -139,7 +139,6 @@ const Bus = mozaik => {
      * @param {Integer} time
      */
     const changeInterval = (requestId, time) => {
-        mozaik.logger.info(`Changing timer for '${requestId}'`);
         if(subscriptions[requestId].timer._repeat != time){
             const onTimeout = subscriptions[requestId].timer._onTimeout
             clearInterval(subscriptions[requestId].timer);

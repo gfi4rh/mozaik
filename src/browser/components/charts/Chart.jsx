@@ -5,7 +5,7 @@ import _uniqueId from 'lodash/uniqueId';
 
 
 
-class Camembert extends Component {
+class Chart extends Component {
 
   constructor(props) {
     super(props);
@@ -14,9 +14,7 @@ class Camembert extends Component {
 
   componentDidMount() {
 
-    const { data, options, legend, type } = this.props;
-
-    options.legend = legend;
+    const { type, data, options } = this.props;
 
     let ctx = document.getElementById(this.id).getContext('2d');
 
@@ -43,28 +41,23 @@ class Camembert extends Component {
   }
 };
 
-Camembert.defaultProps = {
-  legend: {
-    display: true,
-    position: 'bottom'
-  },
+Chart.defaultProps = {
   type: 'pie',
   height: '1em',
   width: '1em',
   options: {}
 };
 
-Camembert.propTypes = {
+Chart.propTypes = {
   data: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.func
   ]).isRequired,
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  legend: PropTypes.object,
   options: PropTypes.object
 };
 
-Camembert.displayName = 'Camembert';
+Chart.displayName = 'Chart';
 
-export default Camembert;
+export default Chart;
