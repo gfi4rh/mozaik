@@ -6,6 +6,7 @@ import ConfigStore      from './ConfigStore';
 
 var _dashboards      = [];
 var _currentIndex    = 0;
+var paused           = false;
 var _config          = null;
 var _timer           = null;
 
@@ -15,8 +16,8 @@ const DashboardStore = Reflux.createStore({
         this.listenTo(DashboardActions.setDashboards,     this.setDashboards);
         this.listenTo(DashboardActions.previousDashboard, this.previousDashboard);
         this.listenTo(DashboardActions.nextDashboard,     this.nextDashboard);
-        this.listenTo(DashboardActions.stopRotation, this.stop);
-        this.listenTo(DashboardActions.startRotation, this.start);
+        this.listenTo(DashboardActions.pause, this.pause);
+        this.listenTo(DashboardActions.restart, this.restart);
         this.listenTo(ConfigStore,                        this.setConfig);
     },
 
@@ -28,13 +29,19 @@ const DashboardStore = Reflux.createStore({
     start() {
         if (_config.rotationDuration && _dashboards.length > 1 && _timer === null) {
             _timer = setInterval(() => {
-                this.nextDashboard();
+                if(!paused) {
+                    this.nextDashboard();
+                }
             }, _config.rotationDuration);
         }
     },
 
-    stop(){
-        _timer = null; 
+    pause(){
+        paused = true; 
+    },
+
+    restart(){
+        paused = false;
     },
 
     previousDashboard() {

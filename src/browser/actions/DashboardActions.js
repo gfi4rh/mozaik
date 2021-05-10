@@ -5,8 +5,8 @@ const DashboardActions = Reflux.createActions([
     'setDashboards',
     'previousDashboard',
     'nextDashboard',
-    'startRotation',
-    'stopRotation'
+    'restart',
+    'pause'
 ]);
 
 
