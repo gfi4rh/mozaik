@@ -20,12 +20,10 @@ const DashboardStore = Reflux.createStore({
         this.listenTo(DashboardActions.restart, this.restart);
         this.listenTo(ConfigStore,                        this.setConfig);
     },
-
     setConfig(config) {
         _config = _.pick(config, 'rotationDuration');
         this.start();
     },
-
     start() {
         if (_config.rotationDuration && _dashboards.length > 1 && _timer === null) {
             _timer = setInterval(() => {
@@ -34,6 +32,10 @@ const DashboardStore = Reflux.createStore({
                 }
             }, _config.rotationDuration);
         }
+    },
+    
+    status(){
+        return paused;
     },
 
     pause(){

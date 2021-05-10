@@ -6,7 +6,8 @@ const DashboardActions = Reflux.createActions([
     'previousDashboard',
     'nextDashboard',
     'restart',
-    'pause'
+    'pause',
+    'status'
 ]);
 
 
