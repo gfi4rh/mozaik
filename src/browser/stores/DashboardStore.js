@@ -15,6 +15,8 @@ const DashboardStore = Reflux.createStore({
         this.listenTo(DashboardActions.setDashboards,     this.setDashboards);
         this.listenTo(DashboardActions.previousDashboard, this.previousDashboard);
         this.listenTo(DashboardActions.nextDashboard,     this.nextDashboard);
+        this.listenTo(DashboardActions.stopRotation, this.stop);
+        this.listenTo(DashboardActions.startRotation, this.start);
         this.listenTo(ConfigStore,                        this.setConfig);
     },
 
@@ -29,6 +31,10 @@ const DashboardStore = Reflux.createStore({
                 this.nextDashboard();
             }, _config.rotationDuration);
         }
+    },
+
+    stop(){
+        _timer = null; 
     },
 
     previousDashboard() {
