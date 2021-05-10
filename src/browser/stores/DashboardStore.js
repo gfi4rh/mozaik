@@ -33,11 +33,7 @@ const DashboardStore = Reflux.createStore({
             }, _config.rotationDuration);
         }
     },
-    
-    status(){
-        return paused;
-    },
-
+    paused,
     pause(){
         paused = true; 
     },
