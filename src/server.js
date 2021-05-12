@@ -31,6 +31,10 @@ export default function (mozaik, app) {
         });
     });
 
+    app.get('/login', (req, res) => {
+        res.render('login')
+    })
+
     app.get('/config', (req, res) => {
         res.send(_.omit(mozaik.config, 'api'));
     });
