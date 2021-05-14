@@ -15,6 +15,8 @@ export default function (mozaik, app) {
 
     mozaik.logger.log('info', chalk.yellow(`Serving static contents from ${mozaik.baseDir}build`));
     app.use(express.static(`${mozaik.baseDir}/build`));
+    app.use(express.json());
+    app.use(express.urlencoded());
 
     app.engine('html', swig.renderFile);
     app.set('view engine', 'html');
@@ -34,7 +36,8 @@ export default function (mozaik, app) {
 
     app.post('/login', (req, res) => {
         const { username, password } = req.body
-        const authToken = checkIdentity(username, password)
+        const authToken = (username && password) ? checkIdentity(username, password) : null
+        mozaik.logger.info(chalk.yellow(`AuthToken created : ${authToken}`))
         res.send({authToken : authToken})
     })
 

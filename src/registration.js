@@ -23,7 +23,7 @@ const generateAuthToken = () => {
 const checkIdentity = (username, password) => {
   var authToken = null
   const hashedPasssword = getHashedPassword(password)
-  const user = users.find(u => u.username === username && u.password === hashedPasssword )
+  const user = users.find(u => u.username === username && u.password === hashedPasssword)
 
   if(user){
     authToken = generateAuthToken()
