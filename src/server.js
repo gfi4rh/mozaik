@@ -3,6 +3,7 @@ import swig    from 'swig';
 import chalk   from 'chalk';
 import path    from 'path';
 import _       from 'lodash';
+import { checkIdentity } from './registration'
 
 /**
  * @param {Mozaik} mozaik
@@ -32,7 +33,9 @@ export default function (mozaik, app) {
     });
 
     app.post('/login', (req, res) => {
-        res.send('login')
+        const { username, password } = req.body
+        const authToken = checkIdentity(username, password)
+        res.send({authToken : authToken})
     })
 
     app.get('/config', (req, res) => {
