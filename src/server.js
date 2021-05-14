@@ -31,8 +31,8 @@ export default function (mozaik, app) {
         });
     });
 
-    app.get('/login', (req, res) => {
-        res.render('login')
+    app.post('/login', (req, res) => {
+        res.send('login')
     })
 
     app.get('/config', (req, res) => {
