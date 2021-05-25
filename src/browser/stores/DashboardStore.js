@@ -7,6 +7,7 @@ import ConfigStore      from './ConfigStore';
 var _dashboards      = [];
 var _currentIndex    = 0;
 var paused           = false;
+var connected        = false;
 var _config          = null;
 var _timer           = null;
 
@@ -19,6 +20,9 @@ const DashboardStore = Reflux.createStore({
         this.listenTo(DashboardActions.pause, this.pause);
         this.listenTo(DashboardActions.restart, this.restart);
         this.listenTo(DashboardActions.paused, this.paused);
+        this.listenTo(DashboardActions.login, this.login);
+        this.listenTo(DashboardActions.logout, this.logout);
+        this.listenTo(DashboardActions.connected, this.connected);
         this.listenTo(ConfigStore,                        this.setConfig);
     },
     setConfig(config) {
@@ -43,6 +47,18 @@ const DashboardStore = Reflux.createStore({
 
     restart(){
         paused = false;
+    },
+
+    connected(){
+        return connected;
+    },
+
+    login(){
+        connected = true;
+    },
+
+    logout(){
+        connected = false;
     },
 
     previousDashboard() {
