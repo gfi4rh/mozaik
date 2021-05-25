@@ -3,7 +3,7 @@ import crypto from 'crypto'
 const users = [
   {
     username : "admingfi",
-    password : 't0moWXrlMz3t7JvCSBG2WUieFKHnikcoaMi8l53rpt8=' //passgfi
+    password : 't0moWXrlMz3t7JvCSBG2WUieFKHnikcoaMi8l53rpt8='
   }
 ]
 
@@ -11,8 +11,7 @@ const authTokens = {}
 
 const getHashedPassword = (password) => {
   const sha256 = crypto.createHash('sha256');
-  const hash = sha256.update(password).digest('base64');
-  return hash;
+  return sha256.update(password).digest('base64');
 }
 
 const generateAuthToken = () => {
@@ -27,7 +26,7 @@ const checkIdentity = (username, password) => {
 
   if(user){
     authToken = generateAuthToken()
-    authTokens[authToken] = user
+    //authTokens[authToken] = user
   }
 
   return authToken
