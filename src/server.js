@@ -40,8 +40,9 @@ export default function (mozaik, app) {
         res.send({msg : readMessage(id)})
     })
 
-    app.post('/writemessage', (req, res) => {
-        const { id, new_msg } = req.body
+    app.post('/writemessage/:id', (req, res) => {
+        const id = req.params['id']
+        const { new_msg } = req.body
         changeMessage(id, new_msg)
         res.send({msg : readMessage(id)})
     })
