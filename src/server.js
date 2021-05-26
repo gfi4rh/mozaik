@@ -36,7 +36,7 @@ export default function (mozaik, app) {
     });
 
     app.get('/message/:id', (req, res) => {
-        const { id } = req.params
+        const id  = req.params['id']
         res.send({msg : readMessage(id)})
     })
 
