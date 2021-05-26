@@ -35,12 +35,12 @@ export default function (mozaik, app) {
         });
     });
 
-    app.get('/message', (req, res) => {
+    app.post('/message', (req, res) => {
         const { id } = req.body
         res.send({msg : readMessage(id)})
     })
 
-    app.post('/message', (req, res) => {
+    app.post('/writemessage', (req, res) => {
         const { id, new_msg } = req.body
         changeMessage(id, new_msg)
         res.send({msg : readMessage(id)})
