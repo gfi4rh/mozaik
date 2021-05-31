@@ -43,7 +43,11 @@ Graphic.defaultProps = {
   type: 'pie',
   height: '1em',
   width: '1em',
-  options: {}
+  options: {
+    legend : {
+      display : false
+    }
+  }
 };
 
 Graphic.propTypes = {
