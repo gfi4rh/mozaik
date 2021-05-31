@@ -46,6 +46,10 @@ Graphic.defaultProps = {
   options: {
     legend : {
       display : false
+    },
+    maintainAspectRation : false,
+    layout : {
+      paddng : 5
     }
   }
 };
