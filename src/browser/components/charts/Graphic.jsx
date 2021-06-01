@@ -42,9 +42,7 @@ class Graphic extends Component {
     const { height, width } = this.props;
 
     return (
-      <div className="graphic__chart" height={height} width={width}>
         <canvas id={this.id} height={height} width={width}></canvas>
-      </div>
 
     );
   }
