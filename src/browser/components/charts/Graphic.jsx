@@ -53,9 +53,6 @@ Graphic.defaultProps = {
   height: '1em',
   width: '1em',
   options: {
-    legend : {
-      display : false
-    },
     maintainAspectRation : false,
     layout : {
       padding : 5
