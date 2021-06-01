@@ -12,7 +12,7 @@ class Graphic extends Component {
 
   componentDidMount() {
 
-    const { type, data, options } = this.props;
+    const { type, labels, data, colors, options } = this.props;
 
     let ctx = document.getElementById(this.id).getContext('2d');
 
@@ -23,8 +23,16 @@ class Graphic extends Component {
     Chart.defaults.global.defaultFontSize = 15
 
     this.chartInstance = new Chart(ctx, {
-      type,
-      data,
+      type : type,
+      data : {
+        labels : labels,
+        datasets : [{
+          data : data,
+          backgroundColor : colors,
+          hoverBackgroundColor : colors,
+          borderWidth : 0.5
+        }]
+      },
       options
     });
   }
@@ -34,10 +42,10 @@ class Graphic extends Component {
     const { height, width } = this.props;
 
     return (
-      <div className="graphic__container">
-      <div className="graphic__chart"><canvas id={this.id} height={height} width={width}></canvas></div>
-      <div className="graphic__legend"></div>
+      <div className="graphic__chart" height={height} width={width}>
+        <canvas id={this.id} height={height} width={width}></canvas>
       </div>
+
     );
   }
 };
