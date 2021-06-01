@@ -34,7 +34,10 @@ class Graphic extends Component {
     const { height, width } = this.props;
 
     return (
-      <canvas id={this.id} height={height} width={width}></canvas>
+      <div className="graphic__container">
+      <div className="graphic__chart"><canvas id={this.id} height={height} width={width}></canvas></div>
+      <div className="graphic__legend"></div>
+      </div>
     );
   }
 };
@@ -49,7 +52,7 @@ Graphic.defaultProps = {
     },
     maintainAspectRation : false,
     layout : {
-      paddng : 5
+      padding : 5
     }
   }
 };
