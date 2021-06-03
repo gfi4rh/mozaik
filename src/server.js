@@ -5,7 +5,6 @@ import path    from 'path';
 import _       from 'lodash';
 import { checkIdentity } from './registration'
 import { readMessage, changeMessage } from './message'
-import info from '../info'
 
 /**
  * @param {Mozaik} mozaik
@@ -56,7 +55,7 @@ export default function (mozaik, app) {
     })
 
     app.get('/info', (req, res) => {
-        res.send(info)
+        res.send(mozaik.config.info)
     })
 
     app.get('/config', (req, res) => {
