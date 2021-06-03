@@ -55,7 +55,7 @@ export default function (mozaik, app) {
     })
 
     app.get('/info', (req, res) => {
-        res.send(mozaik.config.info)
+        res.send({info : mozaik.config.info})
     })
 
     app.get('/config', (req, res) => {
