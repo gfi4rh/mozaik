@@ -54,10 +54,6 @@ export default function (mozaik, app) {
         res.send({auth : auth})
     })
 
-    app.get('/info', (req, res) => {
-        res.send({info : mozaik.config.info})
-    })
-
     app.get('/config', (req, res) => {
         res.send(_.omit(mozaik.config, 'api'));
     });
