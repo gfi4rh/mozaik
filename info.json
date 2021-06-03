@@ -1,0 +1,7 @@
+{
+  "version" : "${project.version}", 
+  "last_commit" : "${git.commit.id}",
+  "last_build" : "${maven.build.timestamp}",
+  "commit_message" : "${git.commit.message.short}",
+  "commit_author" : "${git.commit.user.name}"
+}

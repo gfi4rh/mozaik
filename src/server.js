@@ -5,6 +5,7 @@ import path    from 'path';
 import _       from 'lodash';
 import { checkIdentity } from './registration'
 import { readMessage, changeMessage } from './message'
+import info from '../info'
 
 /**
  * @param {Mozaik} mozaik
@@ -52,6 +53,10 @@ export default function (mozaik, app) {
         const auth = (username && password) ? checkIdentity(username, password) : null
         mozaik.logger.info(chalk.yellow('Connected'))
         res.send({auth : auth})
+    })
+
+    app.get('/info', (req, res) => {
+        res.send(info)
     })
 
     app.get('/config', (req, res) => {
