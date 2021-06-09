@@ -42,7 +42,7 @@ export default function (mozaik, app) {
     app.post('/writemessage/:id', (req, res) => {
         const id = req.params['id']
         const { new_msg } = req.body
-        mozaik.messages[id] = new_msg
+        mozaik.config.messages[id] = new_msg
         res.send({msg : mozaik.config.messages[id]})
     })
 
