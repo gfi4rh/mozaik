@@ -1,13 +1,5 @@
 import crypto from 'crypto'
 
-const users = [
-  {
-    username : "admingfi",
-    password : 't0moWXrlMz3t7JvCSBG2WUieFKHnikcoaMi8l53rpt8='
-  }
-]
-
-
 const getHashedPassword = (password) => {
   const sha256 = crypto.createHash('sha256');
   return sha256.update(password).digest('base64');
