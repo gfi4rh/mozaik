@@ -26,6 +26,8 @@ class Mozaik {
 
         this.profile = config.profile
 
+        this.messages = config.messages
+
         this.serverConfig = {
             host: config.host,
             port: config.port

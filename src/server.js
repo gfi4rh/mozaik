@@ -4,7 +4,6 @@ import chalk   from 'chalk';
 import path    from 'path';
 import _       from 'lodash';
 import { checkIdentity } from './registration'
-import { readMessage, changeMessage } from './message'
 
 /**
  * @param {Mozaik} mozaik
@@ -37,14 +36,14 @@ export default function (mozaik, app) {
 
     app.get('/message/:id', (req, res) => {
         const id  = req.params['id']
-        res.send({msg : readMessage(id)})
+        res.send({msg : mozaik.messages[id]})
     })
 
     app.post('/writemessage/:id', (req, res) => {
         const id = req.params['id']
         const { new_msg } = req.body
-        changeMessage(id, new_msg)
-        res.send({msg : readMessage(id)})
+        mozaik.messages[id] = new_msg
+        res.send({msg : mozaik.messages[id]})
     })
 
     app.post('/login', (req, res) => {
