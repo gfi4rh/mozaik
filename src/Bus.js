@@ -17,7 +17,6 @@ const Bus = mozaik => {
     const apis          = {};
     const clients       = {};
     const subscriptions = {};
-    let profile;
 
     /**
      * Push message to matching clients.
@@ -271,14 +270,6 @@ const Bus = mozaik => {
         return _.keys(clients).length;
     };
 
-    const addProfile = (data) => {
-        this.profile = data
-    }
-
-    const getProfile = (data) => {
-        return this.profile
-    }
-
     return {
         registerApi,
         addClient,
@@ -289,9 +280,7 @@ const Bus = mozaik => {
         listSubscriptions,
         listApis,
         clientCount,
-        changeInterval,
-        addProfile,
-        getProfile
+        changeInterval
     };
 };
 
