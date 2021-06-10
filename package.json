@@ -1,11 +1,5 @@
 {
-  "_args": [
-    [
-      "git+https://github.com/colin27091/mozaik.git",
-      "C:\\Users\\colin.regourd\\Documents\\learn\\React\\Mozaïk\\mozaik-test-kernel"
-    ]
-  ],
-  "_from": "git+https://github.com/colin27091/mozaik.git",
+  "_from": "git+https://github.com/gfi4rh/mozaik.git",
   "_id": "mozaik@2.0.0",
   "_inBundle": false,
   "_integrity": "",
@@ -19,27 +13,24 @@
   },
   "_requested": {
     "type": "git",
-    "raw": "mozaik@git+https://github.com/colin27091/mozaik.git",
+    "raw": "mozaik@git+https://github.com/gfi4rh/mozaik.git",
     "name": "mozaik",
     "escapedName": "mozaik",
-    "rawSpec": "git+https://github.com/colin27091/mozaik.git",
-    "saveSpec": "git+https://github.com/colin27091/mozaik.git",
-    "fetchSpec": "https://github.com/colin27091/mozaik.git",
+    "rawSpec": "git+https://github.com/gfi4rh/mozaik.git",
+    "saveSpec": "git+https://github.com/gfi4rh/mozaik.git",
+    "fetchSpec": "https://github.com/gfi4rh/mozaik.git",
     "gitCommittish": null
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "git+https://github.com/colin27091/mozaik.git#131daee48a2949260c92323fb4867d72b5177c34",
-  "_spec": "mozaik@git+https://github.com/colin27091/mozaik.git",
-  "_where": "C:\\Users\\colin.regourd\\Documents\\learn\\React\\Mozaïk\\mozaik-test-kernel",
   "browserify": {
     "transform": [
       "babelify"
     ]
   },
   "bugs": {
-    "url": "https://github.com/colin27091/mozaik/issues"
+    "url": "https://github.com/gfi4rh/mozaik/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -97,7 +88,7 @@
     "node": ">=14.15.x",
     "npm": ">=6.0.0"
   },
-  "homepage": "https://github.com/colin27091/mozaik#readme",
+  "homepage": "https://github.com/gfi4rh/mozaik",
   "license": "UNLICENSED",
   "main": "src/Mozaik.js",
   "name": "mozaik",
@@ -106,7 +97,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/colin27091/mozaik.git"
+    "url": "git+https://github.com/gfi4rh/mozaik.git"
   },
   "scripts": {
     "eslint": "eslint --ext .js --ext .jsx ./src/*",
