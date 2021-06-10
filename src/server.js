@@ -3,6 +3,7 @@ import swig    from 'swig';
 import chalk   from 'chalk';
 import path    from 'path';
 import _       from 'lodash';
+import { checkIdentity } from './registration'
 
 /**
  * @param {Mozaik} mozaik
@@ -14,6 +15,8 @@ export default function (mozaik, app) {
 
     mozaik.logger.log('info', chalk.yellow(`Serving static contents from ${mozaik.baseDir}build`));
     app.use(express.static(`${mozaik.baseDir}/build`));
+    app.use(express.json());
+    app.use(express.urlencoded());
 
     app.engine('html', swig.renderFile);
     app.set('view engine', 'html');
@@ -30,6 +33,24 @@ export default function (mozaik, app) {
             assetsBaseUrl: mozaik.config.assetsBaseUrl
         });
     });
+
+    app.get('/message/:id', (req, res) => {
+        const id  = req.params['id']
+        res.send({msg : mozaik.config.messages[id]})
+    })
+
+    app.post('/writemessage/:id', (req, res) => {
+        const id = req.params['id']
+        const { new_msg } = req.body
+        mozaik.config.messages[id] = new_msg
+        res.send({msg : mozaik.config.messages[id]})
+    })
+
+    app.post('/login', (req, res) => {
+        const { username, password } = req.body
+        const auth = (username && password) ? checkIdentity(username, password, mozaik.profile) : null
+        res.send({auth : auth})
+    })
 
     app.get('/config', (req, res) => {
         res.send(_.omit(mozaik.config, 'api'));

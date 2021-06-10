@@ -6,34 +6,42 @@ class ProgressBar extends Component {
 
   render() {
 
-    const { completed, color, animation, height } = this.props;
+    const { completed, color, colorEnd, done, open, height } = this.props;
+    const pourcent = completed || (done * 100)/(done+open); 
 
-    const style = {
+    const style_progress = {
       backgroundColor: color,
-      width: completed + '%',
-      transition: `width ${animation}ms`,
-      height: height,
+      width: pourcent + '%'
     };
 
+    const style_rest = {
+      backgroundColor: colorEnd,
+      width : (100 - pourcent) + '%'
+    }
+
     return (
-        <div className="progress-bar_wrapper" style={style}>
+        <div className="progress-bar_wrapper" style={{height: height}}>
+          <div className="progress-bar_part" style={style_progress}>{completed === null || done}</div>
+          <div className="progress-bar_part" style={style_rest}>{completed === null || open}</div>
         </div>
     );
   }
 };
 
 ProgressBar.defaultProps = {
-  completed: 10,
-  color: '#0BD318',
-  animation: 200,
-  height: 10
+  color: "#27ae60",
+  colorEnd : '#535c68',
+  height: '2em',
+  completed : 0
 };
 
 ProgressBar.propTypes = {
-  completed: PropTypes.number,
   color: PropTypes.string,
-  animation: PropTypes.number,
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  colorEnd: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  done : PropTypes.number,
+  open : PropTypes.number,
+  completed : PropTypes.number,
 };
 
 ProgressBar.displayName = 'ProgressBar';

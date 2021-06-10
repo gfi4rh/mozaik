@@ -131,6 +131,21 @@ const Bus = mozaik => {
         ;
     };
 
+
+    /**
+     * Change interval duration 
+     *
+     * @param {String} requestId
+     * @param {Integer} time
+     */
+    const changeInterval = (requestId, time) => {
+        if(subscriptions[requestId].timer._repeat != time){
+            const onTimeout = subscriptions[requestId].timer._onTimeout
+            clearInterval(subscriptions[requestId].timer);
+            subscriptions[requestId].timer = setInterval(onTimeout, time);
+        }     
+    }
+
     /**
      * Add a subscription for the given client (client <-> API call).
      *
@@ -264,7 +279,8 @@ const Bus = mozaik => {
         clientSubscription,
         listSubscriptions,
         listApis,
-        clientCount
+        clientCount,
+        changeInterval
     };
 };
 

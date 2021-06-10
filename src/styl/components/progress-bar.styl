@@ -1,4 +1,15 @@
 .progress-bar
   &_wrapper
-      width  100%
-      height 100%
+    position relative
+    left 50%
+    transform translateX(-50%)
+    overflow hidden
+    border-radius 0.5em
+    width  90%
+    height 2em
+  
+  &_part
+    transition: 90% 200ms
+    height: 100%
+    text-align : center
+    float : left
