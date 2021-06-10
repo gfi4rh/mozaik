@@ -5,7 +5,7 @@ const getHashedPassword = (password) => {
   return sha256.update(password).digest('base64');
 }
 
-const checkIdentity = (username, password) => {
+const checkIdentity = (username, password, users) => {
   const hashedPasssword = getHashedPassword(password)
   const user = users.find(u => u.username === username && u.password === hashedPasssword)
   return user != null
