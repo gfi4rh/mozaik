@@ -1,11 +1,16 @@
-import Reflux from 'reflux-react-16';
+import Reflux from 'reflux';
 
 
 const DashboardActions = Reflux.createActions([
     'setDashboards',
     'previousDashboard',
     'nextDashboard',
-    'startRotation'
+    'restart',
+    'pause',
+    'paused',
+    'login',
+    'logout',
+    'connected'
 ]);
 
 

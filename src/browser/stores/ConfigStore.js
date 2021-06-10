@@ -1,4 +1,4 @@
-import Reflux           from 'reflux-react-16';
+import Reflux           from 'reflux';
 import ConfigActions    from './../actions/ConfigActions';
 import DashboardActions from './../actions/DashboardActions';
 import request          from 'superagent';

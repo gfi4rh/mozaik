@@ -59,9 +59,9 @@ const Bus = mozaik => {
             throw new Error(errMsg);
         }
 
+        
         apis[id] = { methods: api(mozaik), mode };
-
-        mozaik.logger.info(chalk.yellow(`registered API '${id}' (mode: ${mode})`));
+        mozaik.logger.info(chalk.yellow(`Registered API '${id}' (mode: ${mode})`));
     };
 
     /**
@@ -79,8 +79,9 @@ const Bus = mozaik => {
         }
 
         clients[id] = client;
-
         mozaik.logger.info(`Client #${id} connected`);
+
+
     };
 
     /**
@@ -95,7 +96,7 @@ const Bus = mozaik => {
             // if there's no more subscribers, clear the interval
             // to avoid consuming APIs for nothing.
             if (subscription.clients.length === 0 && subscription.timer) {
-                mozaik.logger.info(`removing interval for '${subscriptionId}'`);
+                mozaik.logger.info(`Removing interval for '${subscriptionId}'`);
 
                 clearInterval(subscription.timer);
                 delete subscription.timer;
@@ -129,6 +130,21 @@ const Bus = mozaik => {
             })
         ;
     };
+
+
+    /**
+     * Change interval duration 
+     *
+     * @param {String} requestId
+     * @param {Integer} time
+     */
+    const changeInterval = (requestId, time) => {
+        if(subscriptions[requestId].timer._repeat != time){
+            const onTimeout = subscriptions[requestId].timer._onTimeout
+            clearInterval(subscriptions[requestId].timer);
+            subscriptions[requestId].timer = setInterval(onTimeout, time);
+        }     
+    }
 
     /**
      * Add a subscription for the given client (client <-> API call).
@@ -263,7 +279,8 @@ const Bus = mozaik => {
         clientSubscription,
         listSubscriptions,
         listApis,
-        clientCount
+        clientCount,
+        changeInterval
     };
 };
 
