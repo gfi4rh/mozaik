@@ -48,7 +48,7 @@ export default function (mozaik, app) {
 
     app.post('/login', (req, res) => {
         const { username, password } = req.body
-        const auth = (username && password) ? checkIdentity(username, password, mozaik.profile) : null
+        const auth = (username && password) ? checkIdentity(username, password, mozaik.config.profile) : null
         res.send({auth : auth})
     })
 
