@@ -10,13 +10,29 @@ import CoreApi from './CoreApi';
 class Mozaik {
     constructor(config) {
 
+        const format =  winston.format.combine(
+            winston.format.timestamp(),
+            winston.format.align(),
+            winston.format.printf(
+                info => `[${new Date(info.timestamp).toISOString().replace(/T/, ' ').replace(/\..+/, '')}] ${info.level}: ${info.message}`
+            ))
+
         const logger = winston.createLogger({
-            format: winston.format.combine(
-                winston.format.colorize(),
-                winston.format.simple()
-            ),
             transports: [
-                new winston.transports.Console()
+                new winston.transports.Console({
+                    format : winston.format.combine(
+                        winston.format.colorize(),
+                        format
+                    )
+                }),
+                new winston.transports.File({
+                    filename : `./logs/info-${new Date().toISOString().replace(/\T.+/, '')}-0.log`,
+                    format : winston.format.combine(
+                        winston.format.uncolorize(),
+                        format
+                    ),
+                    maxsize : 1024 * 1024 * 100
+                })
             ]
         })
 
