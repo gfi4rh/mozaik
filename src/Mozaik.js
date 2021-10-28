@@ -26,7 +26,7 @@ class Mozaik {
                     )
                 }),
                 new winston.transports.File({
-                    filename : `/logs/info-${new Date().toISOString().replace(/\T.+/, '')}-0.log`,
+                    filename : `${this.config.logDirectory}/logs/info-${new Date().toISOString().replace(/\T.+/, '')}-0.log`,
                     format : winston.format.combine(
                         winston.format.uncolorize(),
                         format
@@ -35,6 +35,7 @@ class Mozaik {
                 })
             ]
         })
+
 
         this.logger = logger;
 
